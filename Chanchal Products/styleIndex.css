@@ -1,0 +1,366 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    color:#333;
+    background-color: #0d1117;
+}
+
+/* Header part of body */
+
+
+header{
+    background: #ffffff;
+    /* background-color: aliceblue; */
+    position: fixed;
+    top: 0.5rem;
+    width: 98.78%;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgb(255, 255, 255);
+    transition: all 1s ease;
+    border-radius: 24px;
+}
+
+.header-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.logo{
+
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+nav ul{
+    display: flex;                  /* It helps to make all in one x - axis line */
+    list-style: none;               /* Helps to remove the list mark */
+    gap: 2rem;                      /* It gives gap between all list item */
+}
+
+nav a{
+    text-decoration: none;          /* It help us to remove any decoration which it there on text like {a} tag has a blue and line effect on text */
+    color: #20263e;                  /* Gives Colour to text */
+    font-weight: 500;               /* It give boldness to text */
+    padding: 0.5rem 1rem;           /* It gives space to text */
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;               /* It helps to remove content which is averflowing form dadecated space  */
+}
+
+nav a:hover{
+    color: white;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    box-shadow: 0 5px 15px rgb(102,126,234);
+}
+
+.flip-box {
+  background-color: transparent;
+  cursor: pointer;
+  left: 10px;
+  align-items: flex-start;
+  width: 45px;
+  height: 90px;
+  /* border: 1px solid #f1f1f1; */
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1.5s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box:hover .flip-box-inner {
+  transform: rotateX(180deg);
+  /* transform: rotateX(180deg); */
+}
+
+/* Position the front and back side */
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+/* .flip-box-front { */
+  /* background-color: #231487; */
+  /* color: black; */
+/* } */
+
+/* Style the back side */
+.flip-box-back {
+  /* background-color: rgb(30, 21, 152); */
+  /* color: white; */
+  transform: rotateX(180deg);
+}
+
+nav a.active{
+    color: white;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    box-shadow: 0 5px 15px rgb(102,126,234);
+}
+
+header:hover{
+    /* transform: translateY(-5px); */
+    box-shadow: 0 8px 34px #D2C1B6;
+}
+
+/* Main part of body */
+
+
+main{
+    margin-top: 120px;
+    padding: 2rem;
+}
+
+/* main:hover{
+    box-shadow: 0 8px 34px #D2C1B6;
+} */
+
+.container{
+    max-width: 1400px;
+    /* max-height: 300px;        this is doing nothing */
+    margin: 0 auto;
+    /* overflow: hidden; */
+}
+
+.intro{
+    text-align: center;
+    padding: 2.5rem 1rem 2rem;
+    background: #ffffff;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+}
+
+.intro h1{
+    font-size: 2.8rem;
+    margin-bottom: 0.8rem;
+    color: #d4af37;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0, 0.5);         /* It gives a 3-d effect to heading */
+}
+
+.intro p{
+  font-size: 1.1rem;
+  color: #20263e;
+  font-weight: 600;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.section-title{
+    color: #20263e;
+    border-bottom: 2px solid #d4af37;
+}
+
+.product-container{
+    text-align: center;
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem 1rem;
+    box-shadow: 0 8px 36px rgba(184, 178, 178, 0.849);
+}
+
+.product-container:hover{
+    box-shadow: 0 8px 34px #D2C1B6;
+}
+
+.product-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    /* grid-template-columns: 1fr 1fr; */
+    gap: 1.5rem;
+
+}
+
+.product-item{
+    position: relative;
+    overflow: hidden;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgb(0,0,0);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+/* .product-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: all 0.3s ease;
+ } */
+
+.product-caption{
+    text-align: center;
+    color: #000000;
+    margin-bottom: 0.2rem;
+    font-size: medium;
+    font-weight: bolder;
+}
+
+.product-caption:first-child { 
+    color: #20263e;
+    font-weight: bold; 
+}
+
+.product-caption:last-child { 
+    color: #667eea;
+    /* font-weight: bold;  */
+}
+
+.product-item img{
+    width: 100%;
+    height: 95%;
+    object-fit: cover;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.product-item:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rbga(102, 126, 234, 0.4);
+}
+
+/* .product-caption{
+    text-align: center;
+    color: #4B0082;
+    margin-bottom: 0.2rem;
+    font-size: medium;
+    font-weight: bolder;
+} */
+
+/* Footer part of body */
+
+.product-footer{
+    background-color: #20263e;
+    color: white;
+    padding: 20px 0 20px;
+    position: relative;
+    border-radius: 24px;
+}
+
+.footer-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.product-footer h3, 
+.product-footer h4 { 
+    color: #d4af37;
+}
+
+.product-footer p, 
+.phone, 
+.footer-email {
+    color: #e0e0e0; 
+}
+
+.footer-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 10px;
+}
+
+.footer-bottom{
+    color: #fdfdfd;
+    font-size: 14px;
+    text-align: center;
+}
+
+.product-info h3,
+.social-media h4,
+.contact-info h4{
+    color: #d4af37;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    font-weight: normal;
+    align-content: center;
+}
+
+.product-info p,
+.contact-info p{
+    color: #cccccc;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.phone{
+  /* display: flex; */
+  /* justify-content: space-between; */
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.footer-email{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.social-link{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgb(193,153,153);
+    border: 2px solid rgb(212,175,55);
+    border-radius: 50%;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-link:hover{
+    color: #2c2c2c;
+    border-color: #d4af37;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgb(212,175,55);
+}
+
+.social-link { 
+    border: 2px solid #d4af37; 
+    color: #ffffff; 
+    background: transparent; 
+}
+
+.social-link:hover { 
+    background: #d4af37; 
+    color: #20263e; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
